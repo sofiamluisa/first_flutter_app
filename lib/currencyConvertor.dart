@@ -14,8 +14,8 @@ class Homework extends StatefulWidget {
 
 class _HomeworkState extends State<Homework> {
   final TextEditingController controller = TextEditingController();
-  var input;
-  var result;
+  double input;
+  double result;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class _HomeworkState extends State<Homework> {
               keyboardType: TextInputType.number,
               onChanged: (String value) {
                 setState(() {
-                  input = value;
+                  input = double.parse(value);
                 });
               },
             ),
@@ -50,7 +50,7 @@ class _HomeworkState extends State<Homework> {
               onPressed: () {
                 setState(() {
                   // 1 EUR = 4.93 RON
-                  result = int.parse(input) * 4.93;
+                  result = input * 4.93;
                 });
               },
               child: Text("Convert"),
@@ -58,10 +58,10 @@ class _HomeworkState extends State<Homework> {
             Expanded(
                 child: Center(
                     child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [Text(result.toString() + " RON")],
-            )))
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [Text(result.toString() + " RON")],
+                    )))
           ],
         ),
       ),
