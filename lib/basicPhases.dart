@@ -4,13 +4,14 @@ import 'package:audioplayers/audioplayers.dart';
 
 const List<String> sounds = [
   'buna.wav',
-    'gutternmorgen.wav',
+  'gutternmorgen.wav',
   'noaptebuna.wav',
   'nacht.wav',
   'felicitari.wav',
   "gluckwunsch.wav",
   'deundeesti.wav',
-  "woher.wav"];
+  "woher.wav"
+];
 
 void main() {
   runApp(basicPhases());
